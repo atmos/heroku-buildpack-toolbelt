@@ -64,7 +64,8 @@ rmdir heroku-client
 export HEROKU_SKIP_ANALYTICS="true"
 bin/heroku update
 
-cp -r "$HOME/.heroku/*" "$BUILD_DIR/.heroku/"
+ls $HOME/.heroku/
+cp -r $HOME/.heroku/* $BUILD_DIR/.heroku/
 
 echo "-----> Moving the netrc generation script into app/.profile.d"
 mkdir -p $BUILD_DIR/.profile.d
