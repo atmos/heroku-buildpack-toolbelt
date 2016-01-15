@@ -61,7 +61,8 @@ fi
 mv heroku-client/* .
 rmdir heroku-client
 
-echo n | bin/heroku --version
+export HEROKU_SKIP_ANALYTICS="true"
+bin/heroku update
 
 echo "-----> Moving the netrc generation script into app/.profile.d"
 mkdir -p $BUILD_DIR/.profile.d
