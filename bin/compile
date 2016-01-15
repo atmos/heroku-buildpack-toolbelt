@@ -61,15 +61,11 @@ fi
 mv heroku-client/* .
 rmdir heroku-client
 
+echo "-----> installing heroku toolbelt"
 export HEROKU_SKIP_ANALYTICS="true"
 bin/heroku update
 
-ls $HOME/.heroku/
+echo "-----> caching heroku toolbelt install to the slug"
 cp -r $HOME/.heroku/* $BUILD_DIR/.heroku/
-
-echo "-----> Moving the netrc generation script into app/.profile.d"
-mkdir -p $BUILD_DIR/.profile.d
-cp "$BUILDPACK_DIR/bin/gen-netrc.sh" $BUILD_DIR/.profile.d/
-chmod +x $BUILD_DIR/.profile.d/gen-netrc.sh
 
 echo "-----> heroku toolbelt installation done"
