@@ -66,6 +66,7 @@ export HEROKU_SKIP_ANALYTICS="true"
 bin/heroku update
 
 echo "-----> caching heroku toolbelt install to the slug"
+mkdir -p $BUILD_DIR/.heroku
 cp -r $HOME/.heroku/* $BUILD_DIR/.heroku/
 
 echo "-----> heroku toolbelt installation done"
