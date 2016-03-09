@@ -63,7 +63,6 @@ rmdir heroku-client
 
 echo "-----> installing heroku toolbelt"
 export HEROKU_SKIP_ANALYTICS="true"
-bin/heroku plugins:install https://github.com/heroku/heroku-connect-plugin.git
 bin/heroku update
 
 echo "-----> caching heroku toolbelt install to the slug"
