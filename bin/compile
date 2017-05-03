@@ -58,6 +58,7 @@ else
   wget -qO- $HEROKU_CLIENT_URL | tar xz
 fi
 
+mv heroku heroku-client
 mv heroku-client/* .
 rmdir heroku-client
 
